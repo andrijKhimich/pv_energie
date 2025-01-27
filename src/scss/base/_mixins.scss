@@ -1,0 +1,53 @@
+// include font family
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url('../fonts/#{$file_name}.woff') format('woff'),
+			url('../fonts/#{$file_name}.woff2') format('woff2');
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+//Media queries
+@mixin rh($width) {
+	@media only screen and (min-width: #{$width}px),
+  (any-hover: hover) {
+		@content;
+	}
+}
+
+//width
+@mixin d($width) {
+	@media only screen and (max-width: #{$width}px) {
+		@content;
+	}
+}
+
+@mixin m($width) {
+	@media only screen and (min-width: #{$width}px) {
+		@content;
+	}
+}
+
+//height
+@mixin dh($height) {
+	@media only screen and (max-height: #{$height}px) {
+		@content;
+	}
+}
+
+@mixin mh($height) {
+	@media only screen and (min-height: #{$height}px) {
+		@content;
+	}
+}
+
+//retina
+@mixin retina {
+	@media only screen and (-webkit-min-device-pixel-ratio: 2),
+		only screen and (min-device-pixel-ratio: 2) {
+		@content;
+	}
+}

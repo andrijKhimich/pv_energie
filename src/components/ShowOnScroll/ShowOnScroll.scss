@@ -1,0 +1,39 @@
+.anim-top.in-view-detect {
+	opacity: 0;
+	transform: translateY(40px);
+}
+
+.anim-top.in-view {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.anim-bottom.in-view-detect {
+	opacity: 0;
+	transform: translateY(-40px);
+}
+
+.anim-bottom.in-view {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.anim-left.in-view-detect {
+	opacity: 0;
+	transform: translateX(-40px);
+}
+
+.anim-left.in-view {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.anim-right.in-view-detect {
+	opacity: 0;
+	transform: translateX(-40px);
+}
+
+.anim-right.in-view {
+	opacity: 1;
+	transform: translateY(0);
+}

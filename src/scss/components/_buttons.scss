@@ -1,0 +1,48 @@
+.btn-more {
+	position: relative;
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	letter-spacing: 0.02em;
+	color: $primary;
+	padding: 0;
+
+	&.active {
+		.plus {
+			&::after {
+				transform: translate(-50%, -50%) rotate(95deg);
+			}
+		}
+	}
+}
+
+.plus {
+	width: 24px;
+	height: 24px;
+	background-color: $primary;
+	border-radius: 50%;
+	position: relative;
+	display: inline-block;
+	margin-right: 9px;
+
+	&::before,
+	&::after {
+		content: '';
+		background-color: $white;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		position: absolute;
+	}
+
+	&::before {
+		width: 10px;
+		height: 1px;
+	}
+
+	&::after {
+		width: 1px;
+		height: 10px;
+		transition: transform $hover-duration $timing;
+	}
+}

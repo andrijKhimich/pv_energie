@@ -1,0 +1,78 @@
+.accordion {
+	max-width: 640px;
+	margin: 0 auto;
+
+	&__item {
+		border-bottom: 1px solid $black;
+
+		@include d(992) {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+
+		&.active {
+			.plus {
+				&::after {
+					transform: translate(-50%, -50%) rotate(90deg);
+				}
+			}
+		}
+	}
+
+	&__btn {
+		color: $black;
+		cursor: pointer;
+		width: 100%;
+		border: none;
+		text-align: left;
+		outline: none;
+		transition: $hover-duration;
+		padding: 20px 30px 20px 0;
+		font-weight: 500;
+		position: relative;
+	}
+
+	&__panel {
+		padding: 0;
+		max-height: 0;
+		opacity: 0;
+		overflow: hidden;
+		transition: max-height $hover-duration $timing,
+			opacity $hover-duration $timing;
+
+		p {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.plus {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	display: inline-block;
+	right: 0;
+	top: 50%;
+	transform: translate(0, -50%);
+
+	&::before,
+	&::after {
+		content: "";
+		background-color: $primary;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		position: absolute;
+	}
+
+	&::before {
+		width: 20px;
+		height: 1px;
+	}
+
+	&::after {
+		width: 1px;
+		height: 20px;
+		transition: transform $hover-duration $timing;
+	}
+}
