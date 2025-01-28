@@ -1,4 +1,7 @@
 // main project styles + custom normalize
+@use "variables";
+@use "mixins";
+
 *,
 *::before,
 *::after {
@@ -22,7 +25,7 @@ body {
 	min-width: 320px;
 	margin: 0; // Remove the margin in all browsers.
 	font-family: "Roboto", sans-serif;
-	color: $black;
+	color: variables.$black;
 	font-size: 18px;
 	background-color: #f5f4f4;
 	-ms-text-size-adjust: 100%;
@@ -79,7 +82,7 @@ h2 {
 	line-height: 1.08em;
 
 	span {
-		color: $primary;
+		color: variables.$primary;
 	}
 }
 
@@ -374,22 +377,22 @@ textarea,
 input {
 	&::-webkit-input-placeholder {
 		font-size: 16px;
-		color: $black;
+		color: variables.$black;
 	}
 
 	&::-moz-placeholder {
 		font-size: 16px;
-		color: $black;
+		color: variables.$black;
 	}
 
 	&:-ms-input-placeholder {
 		font-size: 16px;
-		color: $black;
+		color: variables.$black;
 	}
 
 	&::placeholder {
 		font-size: 16px;
-		color: $black;
+		color: variables.$black;
 	}
 }
 

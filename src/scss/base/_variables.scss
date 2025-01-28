@@ -1,9 +1,11 @@
 // project colors
 $white: #ffffff;
-$black: #26201A;
-$primary: #FF9556;
+$black: #000000;
+$primary: #0C1838;
+$grey: #A3A3AF;
+$grayLight: #E8ECEF;
 
 // timing
 $hover-duration: .5s;
 $duration: 1s;
-$timing: cubic-bezier(.17,.67,.55,1.05);
+$timing: cubic-bezier(.17, .67, .55, 1.05);

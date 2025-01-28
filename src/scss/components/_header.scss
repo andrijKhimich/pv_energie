@@ -1,4 +1,7 @@
 // header
+@use "../base/variables";
+@use "../base/mixins";
+
 .header {
 	padding: 20px 0;
 	position: absolute;
@@ -15,13 +18,13 @@
 	}
 
 	&__nav {
-		@include d(991) {
+		@include mixins.d(991) {
 			position: fixed;
 			top: 0;
 			left: 0;
 			width: 100vw;
 			height: 100vh;
-			background-color: $primary;
+			background-color: variables.$primary;
 			pointer-events: none;
 			opacity: 0;
 			transform: translateX(-20px);
@@ -62,6 +65,12 @@
 			&:not(:last-child) {
 				margin-right: 2px;
 			}
+
+			&:hover {
+				.subnav {
+					display: block;
+				}
+			}
 		}
 
 		&__link,
@@ -78,7 +87,7 @@
 	z-index: 101;
 	display: none;
 
-	@include d(991) {
+	@include mixins.d(991) {
 		display: inline-block;
 	}
 
@@ -86,7 +95,7 @@
 		position: absolute;
 		width: 22px;
 		height: 2px;
-		background-color: $white;
+		background-color: variables.$white;
 		left: 0;
 		transition: 0.5s ease-out;
 
@@ -119,6 +128,35 @@
 				transform: rotate(-45deg);
 				bottom: 7px;
 			}
+		}
+	}
+}
+
+
+.subnav {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: #fff;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	list-style-type: none;
+	padding: 10px 0;
+	width: 200px;
+
+	.subnav__item {
+		padding: 8px 20px;
+
+		.subnav__link {
+			color: #333;
+			font-size: 14px;
+			font-weight: 400;
+			display: block;
+			text-decoration: none;
+		}
+
+		&:hover {
+			background-color: #f1f1f1;
 		}
 	}
 }

@@ -4,7 +4,7 @@
 	align-items: center;
 	font-size: 16px;
 	letter-spacing: 0.02em;
-	color: $primary;
+	color: variables.$primary;
 	padding: 0;
 
 	&.active {
@@ -19,7 +19,7 @@
 .plus {
 	width: 24px;
 	height: 24px;
-	background-color: $primary;
+	background-color: variables.$primary;
 	border-radius: 50%;
 	position: relative;
 	display: inline-block;
@@ -28,7 +28,7 @@
 	&::before,
 	&::after {
 		content: '';
-		background-color: $white;
+		background-color: variables.$white;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);

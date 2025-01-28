@@ -11,7 +11,8 @@
 			position: relative;
 			padding-left: 26px;
 			margin: 20px 0;
-			@include d(768) {
+
+			@include mixins.d(768) {
 				padding-left: 10px;
 			}
 
@@ -25,7 +26,7 @@
 				left: 12px;
 				border-radius: 50%;
 
-				@include d(768) {
+				@include mixins.d(768) {
 					left: 0;
 				}
 			}
@@ -51,7 +52,7 @@
 	justify-content: center;
 
 	&:hover {
-		background-color: $primary;
-		color: $white;
+		background-color: variables.$primary;
+		color: variables.$white;
 	}
 }
