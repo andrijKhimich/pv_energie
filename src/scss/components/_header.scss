@@ -3,13 +3,36 @@
 @use "../base/mixins";
 
 .header {
-	padding: 20px 0;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	z-index: 100;
-	background-color: bisque;
+	background-color: variables.$white;
+
+	&-top {
+		background-color: variables.$gray;
+
+		&__row {
+			font-weight: bold;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			color: variables.$white;
+			padding: 10px 0;
+			font-size: 18px;
+			flex-wrap: wrap;
+
+			p,
+			a {
+				padding: 5px 0;
+			}
+
+			a {
+				margin: 0 10px;
+			}
+		}
+	}
 
 	&-row {
 		display: flex;
