@@ -1,0 +1,289 @@
+@use "../base/variables";
+@use "../base/mixins";
+
+.hero {
+  position: relative;
+
+  &-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &__item {
+      color: variables.$black;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: bottom;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    padding: 60px 0;
+    color: variables.$white;
+    z-index: 1;
+    overflow: hidden;
+
+  }
+
+  &__box {
+    padding: 70px 35px 70px 45px;
+    background-color: rgba(#030a20, .94);
+    clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px);
+    max-width: 510px;
+
+    @include mixins.d(991) {
+      max-width: 100%;
+      padding: 50px 30px;
+    }
+
+    h1,
+    .title-2 {
+      margin-bottom: 35px;
+
+      @include mixins.d(991) {
+        margin-bottom: 30px;
+      }
+    }
+
+    p {
+      font-size: 26px;
+      line-height: 1.5em;
+
+      @include mixins.d(991) {
+        font-size: 20;
+      }
+    }
+  }
+}
+
+.swiper-pagination-bullet {
+  border-radius: 0;
+  width: 12px;
+  height: 12px;
+  background-color: variables.$white;
+  opacity: 1;
+
+  &-active {
+    background-color: variables.$primary;
+
+  }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 20px;
+}
+
+.benefits {
+  padding: 90px 0 40px 0;
+
+  @include mixins.d(991) {
+    padding: 60px 0 20px 0;
+  }
+
+
+
+  &__row {
+    margin: 0 -15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__col {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    padding: 0 15px;
+
+    @include mixins.d(991) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  &-card {
+    text-align: center;
+    max-width: 340px;
+    margin: 0 auto 60px auto;
+
+    &__image {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background-color: #e8edf0;
+
+      overflow: hidden;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: auto;
+        background-color: #e8edf0;
+      }
+    }
+
+    &__content {
+
+      h3,
+      .title-3 {
+        margin-bottom: 30px;
+      }
+
+      font-size: 20;
+    }
+  }
+}
+
+.video {
+  background-color: variables.$primary;
+  padding: 60px 0;
+
+  &__image {
+    max-width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    @include mixins.d(991) {
+      display: none;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__row {
+    margin: 0 -15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mixins.d(991) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__media {
+    max-width: 900px;
+    padding: 0 15px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 16/9;
+
+    @include mixins.d(991) {
+      max-width: 200%;
+      margin-bottom: 40px;
+    }
+
+    iframe {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    color: variables.$white;
+    font-size: 20;
+    max-width: 410px;
+    padding-left: 80px;
+    position: relative;
+    z-index: 1;
+    padding: 0 15px 0 80px;
+
+    @include mixins.d(1280) {
+      padding-left: 40px;
+    }
+
+    @include mixins.d(991) {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 15px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    strong {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.cards {
+  padding: 60px 0;
+  background-color: variables.$grayLight;
+
+  &__row {
+    margin: 0 -15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+
+    @include mixins.d(991) {
+      align-items: center;
+    }
+  }
+
+  &__col {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    padding: 0 15px;
+
+    @include mixins.d(991) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.card-text {
+  padding: 50px 40px;
+  background-color: variables.$white;
+  clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%, 0 40px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+
+  h3,
+  .title-3 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 20px;
+    margin-bottom: 10px;
+
+    @include mixins.d(991) {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 0;
+    margin-top: auto;
+    max-width: 150px;
+  }
+}

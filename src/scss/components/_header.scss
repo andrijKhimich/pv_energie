@@ -3,9 +3,9 @@
 @use "../base/mixins";
 
 .header {
-	position: absolute;
-	top: 0;
-	left: 0;
+	// position: absolute;
+	// top: 0;
+	// left: 0;
 	width: 100%;
 	z-index: 100;
 	background-color: variables.$white;
@@ -20,7 +20,7 @@
 			justify-content: flex-end;
 			color: variables.$white;
 			padding: 10px 0;
-			font-size: 18px;
+			font-size: 20px;
 			flex-wrap: wrap;
 
 			p,
@@ -38,6 +38,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		padding: 50px 0;
 	}
 
 	&__nav {
@@ -47,7 +48,8 @@
 			left: 0;
 			width: 100vw;
 			height: 100vh;
-			background-color: variables.$primary;
+			background-color: variables.$white;
+			color: variables.$primary;
 			pointer-events: none;
 			opacity: 0;
 			transform: translateX(-20px);
@@ -62,9 +64,9 @@
 			.nav-list {
 				flex-direction: column;
 				align-items: flex-start;
-				padding: 90px 0 0 22px;
+				padding: 140px 0 0 22px;
 				justify-content: flex-start;
-				font-size: 18px;
+				font-size: 20px;
 			}
 		}
 	}
@@ -72,7 +74,7 @@
 
 .logo {
 	display: inline-block;
-	max-width: 200px;
+	max-width: 260px;
 	position: relative;
 	z-index: 1;
 }
@@ -82,11 +84,14 @@
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
+		font-size: 20px;
 
 		&__item,
-		li {
+		&>li {
+			position: relative;
+
 			&:not(:last-child) {
-				margin-right: 2px;
+				margin-right: 20px;
 			}
 
 			&:hover {
@@ -118,7 +123,7 @@
 		position: absolute;
 		width: 22px;
 		height: 2px;
-		background-color: variables.$white;
+		background-color: variables.$primary;
 		left: 0;
 		transition: 0.5s ease-out;
 
@@ -164,22 +169,29 @@
 	background-color: #fff;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	list-style-type: none;
-	padding: 10px 0;
 	width: 200px;
 
-	.subnav__item {
+	&__item,
+	li {
 		padding: 8px 20px;
 
-		.subnav__link {
-			color: #333;
-			font-size: 14px;
-			font-weight: 400;
-			display: block;
-			text-decoration: none;
+		&:not(:last-child) {
+			border-bottom: 1px solid variables.$grayLight;
 		}
 
 		&:hover {
 			background-color: #f1f1f1;
 		}
 	}
+
+	&__link {
+		color: variables.$primary;
+		font-size: 14px;
+		font-weight: 400;
+		display: block;
+		text-decoration: none;
+
+
+	}
+
 }

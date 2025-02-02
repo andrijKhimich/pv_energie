@@ -1,1 +1,65 @@
 // footer
+@use "../base/variables";
+@use "../base/mixins";
+
+.footer {
+  background-color: variables.$primary;
+  padding: 40px 0;
+  color: variables.$grayLight;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  &__col {
+    padding: 0 15px;
+    flex: 0 0 25%;
+    max-width: 25%;
+
+    @include mixins.d(991) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    @include mixins.d(600) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__box {
+    margin-bottom: 60px;
+
+    h4,
+    .title-4 {
+      margin-bottom: 30px;
+      color: variables.$gray;
+      margin-bottom: 30px;
+    }
+  }
+
+  &-list {
+    li {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &-social {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+
+    li {
+      width: 30px;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+}

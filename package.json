@@ -12,7 +12,6 @@
   "author": "Andrii Khimich",
   "license": "ISC",
   "devDependencies": {
-		"gulp-file-include": "^2.3.0",
     "@babel/preset-env": "^7.26.0",
     "browser-sync": "^3.0.3",
     "del": "^8.0.0",
@@ -20,6 +19,7 @@
     "gulp-autoprefixer": "^9.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
+    "gulp-file-include": "^2.3.0",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
@@ -29,12 +29,11 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "gsap": "^3.11.5",
     "jquery": "^3.7.1",
+    "jquery-nice-select": "^1.1.0",
     "npm-check-updates": "^17.1.11",
-		"gsap": "^3.11.5",
-		"jquery": "^3.7.1",
-		"jquery-nice-select": "^1.1.0",
-		"svg4everybody": "^2.1.9",
-		"swiper": "^10.2.0"
+    "svg4everybody": "^2.1.9",
+    "swiper": "^11.2.2"
   }
 }

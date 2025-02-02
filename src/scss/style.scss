@@ -4,12 +4,12 @@
 // @use "../../node_modules/swiper/swiper-bundle.min.css";
 // @use "../../node_modules/jquery-nice-select/css/nice-select.css";
 
-// @use "../../node_modules/swiper/swiper-bundle.min.css";
+@use "../../node_modules/swiper/swiper-bundle.min.css";
 
 // @use "base/index";
 // @use "components/index";
 // @use "sections/index";
 
-// @use "pages/index";
 @use "base/common.scss";
 @use "components/components.scss";
+@use "pages/index";
