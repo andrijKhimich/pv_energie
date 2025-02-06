@@ -1,6 +1,7 @@
 // main project styles + custom normalize
 @use "variables";
 @use "mixins";
+@use "fonts";
 
 *,
 *::before,
@@ -8,7 +9,6 @@
 	box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 html {
 	// font-size: 100%;
@@ -26,9 +26,10 @@ body {
 	width: 100%;
 	min-width: 320px;
 	margin: 0; // Remove the margin in all browsers.
-	font-family: "Source Sans 3", sans-serif;
+	font-family: "SourceSansPro", sans-serif;
 	color: variables.$primary;
 	font-size: 18px;
+	font-weight: 400;
 	background-color: variables.$white;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
