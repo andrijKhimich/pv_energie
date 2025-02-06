@@ -14,7 +14,7 @@ const path = {
     html: `${devFolder}/*.html`,
     scss: `${devFolder}/scss/style.scss`,
     js: `${devFolder}/js/script.js`,
-    images: `${devFolder}/images/**/*.{jpg,png,gif,ico,webp,svg}`,
+    images: `${devFolder}/images/**/*.{jpg,png,svg,gif,ico,webp}`,
     fonts: `${devFolder}/fonts/**/*.*`,
     files: `${devFolder}/files/**/*.*`,
   },
