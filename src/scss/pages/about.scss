@@ -1,0 +1,84 @@
+@use "../base/variables";
+@use "../base/mixins";
+
+.team {
+  padding: 90px 0 40px 0;
+  font-size: 20px;
+
+
+  @include mixins.d(991) {
+    padding: 60px 0 20px 0;
+    font-size: 18px;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+  }
+
+  &__row {
+    margin: 0 -15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 14px;
+
+    &:nth-child(odd) {
+      .team-card {
+
+        margin-left: 0;
+        margin-right: auto;
+      }
+    }
+
+    &:nth-child(even) {
+      .team-card {
+
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+
+
+    @include mixins.d(991) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  &-card {
+    margin: 0 auto 60px auto;
+    max-width: 540px;
+
+
+
+    &__image {
+      max-width: 260px;
+      margin: 0 auto 40px auto;
+      border-radius: 50%;
+      overflow: hidden;
+
+      @include mixins.d(991) {
+        margin-bottom: 20px;
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    &__title {
+      text-align: center;
+      margin-bottom: 30px;
+
+      @include mixins.d(991) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
