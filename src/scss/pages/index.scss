@@ -4,6 +4,22 @@
 .hero {
   position: relative;
 
+  &_inner {
+    max-height: 500px;
+    height: 50vw;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      // width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
   &-slider {
 
     &__item {
@@ -24,7 +40,7 @@
         object-position: bottom;
 
         @include mixins.d(991) {
-          display: none;
+          // display: none;
         }
       }
     }
@@ -60,10 +76,9 @@
 
     p {
       font-size: 26px;
-      line-height: 1.5em;
 
       @include mixins.d(991) {
-        font-size: 20;
+        font-size: 20px;
       }
     }
   }
@@ -143,7 +158,6 @@
     }
 
     &__content {
-      font-size: 20px;
 
       h3,
       .title-3 {
@@ -205,7 +219,6 @@
 
   &__content {
     color: variables.$white;
-    font-size: 20px;
     max-width: 410px;
     padding-left: 80px;
     position: relative;
@@ -220,7 +233,6 @@
       width: 100%;
       max-width: 100%;
       padding-left: 15px;
-      font-size: 18px;
       text-align: center;
     }
 
@@ -278,11 +290,9 @@
   }
 
   p {
-    font-size: 20px;
     margin-bottom: 10px;
 
     @include mixins.d(991) {
-      font-size: 18px;
       margin-bottom: 30px;
     }
   }

@@ -3,17 +3,14 @@
 
 .team {
   padding: 90px 0 40px 0;
-  font-size: 20px;
 
 
   @include mixins.d(991) {
     padding: 60px 0 20px 0;
-    font-size: 18px;
   }
 
   &__text {
     margin-bottom: 40px;
-
   }
 
   &__row {
@@ -30,17 +27,23 @@
 
     &:nth-child(odd) {
       .team-card {
-
         margin-left: 0;
         margin-right: auto;
+
+        @include mixins.d(991) {
+          margin: 0 auto 60px auto;
+        }
       }
     }
 
     &:nth-child(even) {
       .team-card {
-
         margin-left: auto;
         margin-right: 0;
+
+        @include mixins.d(991) {
+          margin: 0 auto 60px auto;
+        }
       }
     }
 
@@ -55,7 +58,9 @@
     margin: 0 auto 60px auto;
     max-width: 540px;
 
-
+    @include mixins.d(991) {
+      max-width: 100%;
+    }
 
     &__image {
       max-width: 260px;
@@ -80,5 +85,84 @@
         margin-bottom: 20px;
       }
     }
+  }
+}
+
+.projects {
+  padding: 90px 0;
+  background-color: #e8ecef;
+
+  @include mixins.d(991) {
+    padding: 60px 0;
+  }
+
+  &__row {
+    margin: 0 -30px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mixins.d(991) {
+      margin: 0 -15px;
+    }
+  }
+
+  &__col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 15px 30px;
+    margin-bottom: 40px;
+
+    @include mixins.d(991) {
+      padding: 0 15px;
+    }
+
+    @include mixins.d(767) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  &-card {
+    position: relative;
+
+    &__image {
+      background-color: transparent;
+      clip-path: polygon(50px 0, 100% 0, 100% 100%, 0 100%, 0 50px);
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    &__content {
+      padding: 40px;
+      box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, .3);
+
+      @include mixins.d(991) {
+        padding: 30px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 30px;
+
+      @include mixins.d(991) {
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-weight: bold;
+      }
+    }
+
+    &__list {
+      list-style: none;
+      margin-bottom: 40px;
+
+      @include mixins.d(991) {
+        margin-bottom: 20px;
+      }
+    }
+
   }
 }
