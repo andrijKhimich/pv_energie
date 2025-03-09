@@ -1,0 +1,83 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<section class="section hero">
+	<div class="swiper hero-slider">
+		<div class="swiper-wrapper">
+			{% for slide in page.header.slider.slider__item %}
+			<div class="swiper-slide hero-slider__item">
+				<div class="hero-slider__image">
+					<img src="{{ page.media[slide.slide_image].url() | raw }}" alt="{{slide.slide_title}}" />
+				</div>
+				<div class="container">
+					<div class="hero__content">
+						<div class="hero__box">
+							<h1 class="title-1">{{slide.slide_title}}</h1>
+							<p>{{slide.slide_content}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+</section>
+<section class="section benefits">
+	<div class="container">
+		<div class="section__title">
+			<h2 class="title-2">{{page.header.benefits.benefits_title}}</h2>
+		</div>
+		<div class="benefits__row">
+			{% for item in page.header.benefits.benefits__item %}
+			<div class="benefits__col">
+				<div class="benefits-card">
+					<div class="benefits-card__image">
+						<img src="{{ page.media[item.benefits_image].url() | raw }}" alt="{{item.benefits_title}}" />
+					</div>
+					<div class="benefits-card__content">
+						{{item.benefits_content | markdown}}
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+<section class="section video">
+	<div class="video__image">
+		<img src="./images/video-image.jpg" alt="bg" />
+	</div>
+	<div class="container">
+		<div class="video__row">
+			<div class="video__media">
+				<iframe height="100%" src="{{page.header.video.video_link}}" title="PV² Energie - Projektentwickler für BHKW- und Photovoltaikanlagen" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</div>
+			<div class="video__content">
+				{{page.header.video.video_content | markdown}}
+				<a href="{{page.header.video.video_button_link}}" class="btn">{{page.header.video.video_button_text}}</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section cards">
+	<div class="container">
+		<div class="section__title">
+			<h2 class="title-2">{{page.header.cards.cards_title}}</h2>
+		</div>
+		<div class="cards__row">
+			{% for card in page.header.cards.cards__item %}
+			<div class="cards__col">
+				<div class="card-text">
+					{{card.cards_content | markdown}}
+					<a href="{{card.cards_button_link}}" class="btn btn_primary card-text__btn">{{card.cards_button_text}}</a>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+{% endblock %}

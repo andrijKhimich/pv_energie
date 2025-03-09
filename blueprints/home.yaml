@@ -1,0 +1,94 @@
+title: Home
+"@extends": default
+form:
+  fields:
+    tabs:
+      fields:
+        header.slider:
+          type: tab
+          title: Slider section
+          fields:
+            .slider__item:
+              type: list
+              label: Add slide
+              max: 3
+              fields:
+                .slide_image:
+                  type: filepicker
+                  label: Select a image
+                  preview_images: true
+                  accept:
+                    - .png
+                    - .jpg
+                    - .webp
+                    - .svg
+                .slide_title:
+                  type: Text
+                  label: Title
+                .slide_content:
+                  type: Editor
+                  label: Text
+        header.benefits:
+          type: tab
+          title: Benefits
+          fields:
+            .benefits_title:
+              type: text
+              label: Title
+            .benefits__item:
+              type: list
+              label: Add item
+              max: 3
+              fields:
+                .benefits_image:
+                  type: filepicker
+                  label: Select a image
+                  preview_images: true
+                  accept:
+                    - .png
+                    - .jpg
+                    - .webp
+                    - .svg
+                .benefits_title:
+                  type: Text
+                  label: Title
+                .benefits_content:
+                  type: Editor
+                  label: Text
+        header.video:
+          type: tab
+          title: Video
+          fields:
+            .video_link:
+              type: Text
+              label: Video link
+            .video_content:
+              type: Editor
+              label: Title
+            .video_button_link:
+              type: Text
+              label: Button Link
+            .video_button_text:
+              type: Text
+              label: Button Text
+        header.cards:
+          type: tab
+          title: Cards
+          fields:
+            .cards_title:
+              type: text
+              label: Title
+            .cards__item:
+              type: list
+              label: Add item
+              max: 3
+              fields:
+                .cards_content:
+                  type: Editor
+                  label: Text
+                .cards_button_link:
+                  type: Text
+                  label: Button Link
+                .cards_button_text:
+                  type: Text
+                  label: Button Text

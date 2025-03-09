@@ -1,4 +1,4 @@
-const deployFolder = "build";
+const deployFolder = "assets";
 const devFolder = "src";
 
 const path = {

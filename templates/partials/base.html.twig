@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}">
+
+<head>
+	{% block head %}
+	<meta charset="utf-8" />
+	<title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% include 'partials/metadata.html.twig' %}
+	{# TODO: favicon #}
+	<!-- favicons -->
+	<link rel="icon" href="{{ url('theme://assets/images/logo.svg')|e }}" sizes="any"><!-- 32×32 -->
+	<link rel="canonical" href="{{ page.canonical(true)|e }}" />
+	{% endblock head %}
+
+	{% block stylesheets %}
+	{% do assets.addCss('theme://assets/css/style.min.css') %}
+	{% endblock %}
+
+	{% block javascripts %}
+	{# {% do assets.addJs('theme://assets/js/libs.min.js',  { group: 'bottom' }) %} #}
+	{% do assets.addJs('theme://assets/js/script.js',  { group: 'bottom' }) %}
+	{% endblock %}
+
+	{% block assets deferred %}
+	{{ assets.css()|raw }}
+	{{ assets.js()|raw }}
+	{% endblock %}
+</head>
+
+<body class="{{ page.header.body_classes }}">
+	<div class="global-wrapper">
+		{% block header %}
+		<header class="header">
+			<div class="header-top">
+				<div class="container">
+					<div class="header-top__row">
+						<p>Mo. - Fr. 10:00 - 18:00 Uhr</p>
+						<a href="tel:+49028234190680">+49 (0)2823 41 90 68-0</a>
+						<a href="mailto:info@pv2energie.de">info@pv2energie.de</a>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="header-row">
+					<a href="{{ home_url|e }}" class="logo">
+						<img src="images/logo.svg" alt="logo" />
+					</a>
+						{% include 'partials/navigation.html.twig' %}
+				
+					<button class="burger js-burger" aria-label="burger" title="burger">
+						<span class="burger_item"></span>
+						<span class="burger_item"></span>
+						<span class="burger_item"></span>
+					</button>
+				</div>
+			</div>
+		</header>
+		<!-- end header -->
+		{% endblock %}
+
+		{% block body %}
+		<main class="main">
+			{% block content %}{% endblock %}
+		</main>
+		{% endblock %}
+
+		{% block footer %}
+		<!-- footer -->
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__row">
+					<div class="footer__col">
+						<div class="footer__box">
+							<h4>Wie Sie uns erreichen</h4>
+							<ul class="footer-list">
+								<li>
+									<p>PV² Energie GmbH</p>
+									<p>Kirchstraße 93, D-47574 Goch</p>
+								</li>
+								<li>
+									<p>Telefon: +49 (0) 2823 41 90 68-0</p>
+									<p>Telefax: +49 (0) 2823 41 90 68-9</p>
+								</li>
+								<li>
+									<p>E-Mail: info@pv2energie.de</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer__col">
+						<div class="footer__box">
+							<h4>Solarenergie Überblick</h4>
+							<ul class="footer-list">
+								<li>
+									<a href="#">Funktionsweise Solaranlage</a>
+								</li>
+								<li>
+									<a href="#">Strom aus Solaranlagen verkaufen</a>
+								</li>
+								<li>
+									<a href="#">Voraussetzungen an die Dachbeschaffenheit</a>
+								</li>
+								<li>
+									<a href="#">PV-Anlage finanzieren</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer__col">
+						<div class="footer__box">
+							<h4>Mehr über PV2</h4>
+							<ul class="footer-list">
+								<li>
+									<p>Karriere</p>
+								</li>
+							</ul>
+							<ul class="footer-social">
+								<li>
+									<a href="#">
+										<img src="./images/youtube.svg" alt="youtube" />
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="./images/facebook.svg" alt="facebook" />
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer__col">
+						<div class="footer__box">
+							<h4>English</h4>
+							<ul class="footer-list">
+								<li>
+									<p>Impressum</p>
+									<p>Disclaimer</p>
+									<p>AGB's</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- end footer -->
+		{% endblock %}
+		{% block bottom %}
+		{% endblock %}
+	</div>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		{{ assets.js('bottom')|raw }}
+
+</body>
+
+</html>

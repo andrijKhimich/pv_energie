@@ -1,0 +1,43 @@
+title: Home
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        header.hero:
+          type: tab
+          title: Hero
+          fields:
+            .hero_image:
+              type: filepicker
+              label: Banner
+              preview_images: true
+              accept:
+                - .png
+                - .jpg
+                - .webp
+        header.cards:
+          type: tab
+          title: Team section
+          fields:
+            .section_title:
+              type: Text
+              label: Section title
+            .cards_list:
+              type: list
+              label: Add card
+              fields:
+                .card_image:
+                  type: filepicker
+                  label: Select a image
+                  preview_images: true
+                  accept:
+                    - .png
+                    - .jpg
+                    - .webp
+                .card_name:
+                  type: Text
+                  label: Name
+                .card_position:
+                  type: Text
+                  label: Position

@@ -1,0 +1,19 @@
+title: Image-item
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        features:
+          type: tab
+          title: Images
+            fields:
+              header.media_gallery_image:
+                type: filepicker
+                label: Select image
+                preview_images: true
+                accept:
+                  - .png
+                  - .jpg
+                  - .webp
