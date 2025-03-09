@@ -17,7 +17,17 @@ form:
                 - .jpg
                 - .webp
                 - .svg
-        header.double-content:
+        header.content:
+          type: tab
+          title: Content
+          fields:
+            .title:
+              type: Text
+              label: Title
+            .text:
+              type: Editor
+              label: Content
+        header.doubleContent:
           type: tab
           title: Image - content
           fields:
@@ -43,6 +53,29 @@ form:
           type: tab
           title: Details
           fields:
+            .details_title:
+              type: Text
+              label: Title
+            .details_subtitle:
+              type: Text
+              label: Subtitle
             .details_content:
               type: Editor
               label: Content
+            .details_item:
+              type: list
+              label: Add item
+              max: 10
+              fields:
+                .details_item_image:
+                  type: filepicker
+                  label: Select icon
+                  preview_images: true
+                  accept:
+                    - .png
+                    - .jpg
+                    - .webp
+                    - .svg
+                .details_item_content:
+                  type: Editor
+                  label: Text

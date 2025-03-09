@@ -1,81 +1,61 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
- {% if page.header.hero %}
-	<section class="section hero hero-inner">
-    <div class="hero_bg">
-      <img src="{{page.media[header.hero.hero_bg].url()}}" alt="{{ page.header.hero.hero_title}}" />
+  {% if page.header.hero %}
+    <section class="section hero_inner">
+      <img src="{{ page.media[header.hero.hero_bg].url() }}" alt="img" />
+    </section>
+  {% endif  %}
+
+  {% if page.header.content %}
+    <section class="section content">
+      <div class="container">
+        <div class="section__title">
+          <h2>{{page.header.content.title}}</h2>
+        </div>
+          {{page.header.content.text | markdown}}
+      </div>
+    </section>
+  {% endif  %}
+
+  <section class="section half">
+    <div class="half__image">
+      <img src="{{ page.media[header.doubleContent.image].url() }}" alt="bg" />
     </div>
     <div class="container">
-      <div class="row">
-        <div class="offset-lg-6 col-lg-6">
-          <div class="hero__content">
-            <p>{{page.header.hero.hero_subtitle}}</p>
-            <h2>{{page.header.hero.hero_title}}</h2>
-            {% if page.header.hero.hero_button %}
-              <a href="{{page.header.hero.hero_button_link}}" class="btn">{{page.header.hero.hero_button}}</a>
-            {% endif %}
-          </div>
+      <div class="half__row">
+        <div class="half__content">
+          {{page.header.doubleContent.content | markdown}}
+          <a href="#" class="btn">Jetzt Termin vereinbaren</a>
         </div>
       </div>
     </div>
   </section>
-{% endif  %}
-<section class="section section-article">
+  <section class="section stages">
   <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="section-article__content">
-          {{page.content|raw}}
-          {% if page.header.content_button.button_text %}
-						<a href="{{page.header.content_button.button_url}}" class="btn">{{ page.header.content_button.button_text }}</a>
-					{% endif %}
+    <div class="stages__content">
+      <div class="section__title stages__title">
+        <h2 class="title-2"> {{page.header.details.details_title}}</h2>
+        <p>{{page.header.details.details_subtitle}}</p>
+      </div>
+      {{page.header.details.details_content | markdown}}
+    </div>
+    <div class="stages-list">
+    {% for item in page.header.details.details_item %}
+      <div class="stages-list__item">
+        <div class="stages-list__row">
+          <div class="stages-list__image">
+            <img src="{{ page.media[item.details_item_image].url() | raw }}" alt="details" />
+          </div>
+          <div class="stages-list__content">
+            {{item.details_item_content | markdown}}
+          </div>
         </div>
       </div>
-      {% if page.header.sidebar.sidebar_list %}
-        <div class="col-lg-5">
-        {% for image in page.header.sidebar.sidebar_list %}
-          <div class="section-article__image">
-            <img src="{{ page.media[image.sidebar_image].url() | raw }}" alt="{{page.title}}" />
-          </div>
-        {% endfor %}
-        </div>
-      {% endif  %}
+    {% endfor %}
     </div>
   </div>
 </section>
-{% if page.header.accordion.accordion %}
-  <section class="section faq">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="faq__accordion">
-            <div class="accordion">
-              {% for acc in page.header.accordion.accordion %}
-                <div class="accordion__item">
-                    <button class="accordion__btn">
-                      {{ acc.accordion_question }}
-                      <span class="plus"></span>
-                    </button>
-                    <div class="accordion__panel">
-                      <div class="accordion__content">
-                      {{ acc.accordion_answer|markdown }}
-                      </div>
-                      {% if acc.accordion_image %}
-                        <div class="accordion__image">
-                        <img src="{{ page.media[acc.accordion_image].url() | raw }}" alt="{{ acc.accordion_question }}" />
-                        </div>
-                      {% endif  %}
-                    </div>
-                  </div>
-                {% endfor %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-{% endif  %}
 
 {% endblock %}
 
