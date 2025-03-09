@@ -1,0 +1,48 @@
+title: Project-page
+"@extends": default
+form:
+  fields:
+    tabs:
+      fields:
+        header.hero:
+          type: tab
+          title: Hero
+          fields:
+            .hero_bg:
+              type: filepicker
+              label: Select background image
+              preview_image: true
+              accept:
+                - .png
+                - .jpg
+                - .webp
+                - .svg
+        header.double-content:
+          type: tab
+          title: Image - content
+          fields:
+            .image:
+              type: filepicker
+              label: Select background image
+              preview_image: true
+              accept:
+                - .png
+                - .jpg
+                - .webp
+                - .svg
+            .content:
+              type: Editor
+              label: Content
+            .button_text:
+              type: Text
+              label: Button Text
+            .button_link:
+              type: Text
+              label: Button URL
+        header.details:
+          type: tab
+          title: Details
+          fields:
+            .details_content:
+              type: Editor
+              label: Content

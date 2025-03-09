@@ -63,7 +63,8 @@
     }
 
     &__image {
-      max-width: 260px;
+      width: 260px;
+      height: 260px;
       margin: 0 auto 40px auto;
       border-radius: 50%;
       overflow: hidden;
@@ -74,6 +75,7 @@
 
       img {
         object-fit: cover;
+        height: 100%;
       }
     }
 

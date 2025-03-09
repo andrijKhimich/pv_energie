@@ -11,7 +11,7 @@ form:
             .slider__item:
               type: list
               label: Add slide
-              max: 3
+              max: 10
               fields:
                 .slide_image:
                   type: filepicker
@@ -28,19 +28,22 @@ form:
                 .slide_content:
                   type: Editor
                   label: Text
-        header.benefits:
+        header.team:
           type: tab
-          title: Benefits
+          title: Team
           fields:
-            .benefits_title:
+            .team_title:
               type: text
               label: Title
-            .benefits__item:
+            .team_text:
+              type: Editor
+              label: Text
+            .team__item:
               type: list
               label: Add item
               max: 3
               fields:
-                .benefits_image:
+                .team_image:
                   type: filepicker
                   label: Select a image
                   preview_images: true
@@ -49,16 +52,25 @@ form:
                     - .jpg
                     - .webp
                     - .svg
-                .benefits_title:
+                .team_title:
                   type: Text
                   label: Title
-                .benefits_content:
+                .team_content:
                   type: Editor
                   label: Text
         header.video:
           type: tab
           title: Video
           fields:
+            .video_bg:
+              type: filepicker
+              label: Select a image
+              preview_images: true
+              accept:
+                - .png
+                - .jpg
+                - .webp
+                - .svg
             .video_link:
               type: Text
               label: Video link
@@ -71,19 +83,19 @@ form:
             .video_button_text:
               type: Text
               label: Button Text
-        header.cards:
+        header.projects:
           type: tab
-          title: Cards
+          title: Projects
           fields:
             .cards_title:
               type: text
               label: Title
-            .cards__item:
+            .project__item:
               type: list
               label: Add item
-              max: 3
+              max: 10
               fields:
-                .cards_content:
+                .project_content:
                   type: Editor
                   label: Text
                 .cards_button_link:

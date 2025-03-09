@@ -11,7 +11,7 @@ form:
             .slider__item:
               type: list
               label: Add slide
-              max: 3
+              max: 10
               fields:
                 .slide_image:
                   type: filepicker
@@ -59,6 +59,15 @@ form:
           type: tab
           title: Video
           fields:
+            .video_bg:
+              type: filepicker
+              label: Select a image
+              preview_images: true
+              accept:
+                - .png
+                - .jpg
+                - .webp
+                - .svg
             .video_link:
               type: Text
               label: Video link

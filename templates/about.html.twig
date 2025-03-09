@@ -23,31 +23,37 @@
 		<div class="swiper-pagination"></div>
 	</div>
 </section>
-<section class="section benefits">
-	<div class="container">
-		<div class="section__title">
-			<h2 class="title-2">{{page.header.benefits.benefits_title}}</h2>
-		</div>
-		<div class="benefits__row">
-			{% for item in page.header.benefits.benefits__item %}
-			<div class="benefits__col">
-				<div class="benefits-card">
-					<div class="benefits-card__image">
-						<img src="{{ page.media[item.benefits_image].url() | raw }}" alt="{{item.benefits_title}}" />
-					</div>
-					<div class="benefits-card__content">
-						{{item.benefits_content | markdown}}
-					</div>
-				</div>
-			</div>
+<section class="section team">
+  <div class="container">
+    <div class="section__title">
+      <h2 class="title-2">{{page.header.team.team_title}}</h2>
+    </div>
+    <div class="team__text">
+      {{page.header.team.team_text | markdown}}
+    </div>
+    <div class="team__row">
+			{% for item in page.header.team.team__item %}
+        <div class="team__col">
+          <div class="team-card">
+            <div class="team-card__image">
+             	<img src="{{ page.media[item.team_image].url() | raw }}" alt="{{item.team_title}}" />
+            </div>
+            <div class="team-card__title">
+              <h2 class="title-2">{{item.team_title}}</h2>
+            </div>
+            <div class="team-card__content">
+              {{item.team_content}}
+            </div>
+          </div>
+        </div>
 			{% endfor %}
-		</div>
-	</div>
+    </div>
+  </div>
 </section>
 
 <section class="section video">
 	<div class="video__image">
-		<img src="./images/video-image.jpg" alt="bg" />
+    <img src="{{ page.media[page.header.video.video_bg].url() | raw }}" alt="bg" />
 	</div>
 	<div class="container">
 		<div class="video__row">
