@@ -6,7 +6,6 @@
       <img src="{{ page.media[header.hero.hero_bg].url() }}" alt="img" />
     </section>
   {% endif  %}
-
   {% if page.header.content %}
     <section class="section content">
       <div class="container">
@@ -17,7 +16,11 @@
       </div>
     </section>
   {% endif  %}
-
+  {% if page.header.banner %}
+    <section class="section banner">
+      <img src="{{ page.media[header.banner.banner_bg].url() }}" alt="banner" />
+    </section>
+  {% endif  %}
   <section class="section half">
     <div class="half__image">
       <img src="{{ page.media[header.doubleContent.image].url() }}" alt="bg" />

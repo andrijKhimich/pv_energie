@@ -59,25 +59,37 @@
 		<div class="video__row">
 			<div class="video__media">
 				<iframe height="100%" src="{{page.header.video.video_link}}" title="PV² Energie - Projektentwickler für BHKW- und Photovoltaikanlagen" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-			<div> class="video__content">
+			</div>
+			<div class="video__content">
 				{{page.header.video.video_content | markdown}}
 				<a href="{{page.header.video.video_button_link}}" class="btn">{{page.header.video.video_button_text}}</a>
 			</div>
 		</div>
 	</div>
 </section>
-
-<section class="section cards">
+<section class="section projects">
 	<div class="container">
 		<div class="section__title">
-			<h2 class="title-2">{{page.header.cards.cards_title}}</h2>
+			<h2 class="title-2">{{page.header.projects.cards_title}}</h2>
 		</div>
-		<div class="cards__row">
-			{% for card in page.header.cards.cards__item %}
-			<div class="cards__col">
-				<div class="card-text">
-					{{card.cards_content | markdown}}
-					<a href="{{card.cards_button_link}}" class="btn btn_primary card-text__btn">{{card.cards_button_text}}</a>
+		<div class="projects__row">
+			{% for post in taxonomy.findTaxonomy({'category':'projects'}) %}			
+			<div class="projects__col">
+				<div class="projects-card">
+					<div class="projects-card__image">
+					{# {% set media_files = page.media.filterBy('taxonomy.category', 'projects') %} #}
+						{{ post.media[post.header.hero.hero_bg] | markdown}}
+					</div>
+					<div class="projects-card__content">
+						<div class="projects-card__title">
+							<h2 class="title-2">{{ post.title|e }}</h2>
+							{# <p>Lorem, ipsum.</p> #}
+						</div>
+						<div class="projects-card__text">
+							{{ post.content | markdown }}
+						</div>
+						<a href="{{ post.url|e }}" class="btn btn_primary">{{page.header.projects.cards_button}}</a>
+					</div>
 				</div>
 			</div>
 			{% endfor %}

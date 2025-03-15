@@ -3,9 +3,7 @@
 @use "../base/mixins";
 
 .header {
-	// position: absolute;
-	// top: 0;
-	// left: 0;
+	position: relative;
 	width: 100%;
 	z-index: 100;
 	background-color: variables.$white;
@@ -59,6 +57,7 @@
 				opacity: 1;
 				pointer-events: initial;
 				transform: translateX(0);
+				z-index: 2;
 			}
 
 			.nav-list {
@@ -76,17 +75,20 @@
 	display: inline-block;
 	max-width: 260px;
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 }
 
 .nav {
+	font-size: 20px;
+	margin-top: 20px;
+
 	&-list {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
-		font-size: 20px;
 
-		&__item,
 		&>li {
 			position: relative;
 
@@ -94,17 +96,113 @@
 				margin-right: 20px;
 			}
 
-			&:hover {
-				.subnav {
-					display: block;
+			&.selected {
+				color: variables.$primary;
+			}
+
+			&.has-children {
+				position: relative;
+				padding-right: 10px;
+
+				&:before {
+					content: "";
+					background-image: url(../images/down.svg);
+					position: absolute;
+					top: 16px;
+					right: 4px;
+					width: 20px;
+					height: 20px;
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
 				}
 			}
-		}
 
-		&__link,
-		a {
-			padding: 10px 15px;
+			a {
+				transition: color 0.3s ease;
+				padding: 10px 15px;
+				display: block;
+			}
 		}
+	}
+}
+
+
+.subnav {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	opacity: 0;
+	font-size: 16px;
+	transition: opacity 0.3s ease;
+	background-color: variables.$white;
+	z-index: 1;
+	pointer-events: none;
+	padding: 0 0 15px 0;
+
+	&>li {
+		color: variables.$black;
+		margin-bottom: 12px;
+
+		a {
+			padding: 2px 15px;
+			position: relative;
+
+			&::before {
+				content: "";
+				height: 2px;
+				background-color: variables.$black;
+				position: absolute;
+				bottom: 2px;
+				left: 15px;
+				width: 0;
+				transition: width 0.3s ease;
+			}
+
+			&:hover::before {
+				width: 70%;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.nav-list>li:hover>a {
+		color: variables.$primary;
+	}
+
+	.nav-list>li:hover .subnav {
+		opacity: 1;
+		pointer-events: initial;
+	}
+
+	.nav-list>li:hover .subnav a {
+		color: variables.$black;
+	}
+}
+
+
+@media only screen and (max-width: 992px) {
+
+	.subnav {
+		pointer-events: initial;
+		display: none;
+		position: relative;
+		opacity: 1;
+	}
+
+	.subnav>li>a {
+		padding: 0 30px;
+	}
+
+	.subnav>li>a::before {
+		left: 30px;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 992px) {
+	.nav-list>li:hover .subnav {
+		position: relative;
 	}
 }
 
@@ -161,37 +259,37 @@
 }
 
 
-.subnav {
-	display: none;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	background-color: #fff;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	list-style-type: none;
-	width: 200px;
+// .subnav {
+// 	display: none;
+// 	position: absolute;
+// 	top: 100%;
+// 	left: 0;
+// 	background-color: #fff;
+// 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+// 	list-style-type: none;
+// 	width: 200px;
 
-	&__item,
-	li {
-		padding: 8px 20px;
+// 	&__item,
+// 	li {
+// 		padding: 8px 20px;
 
-		&:not(:last-child) {
-			border-bottom: 1px solid variables.$grayLight;
-		}
+// 		&:not(:last-child) {
+// 			border-bottom: 1px solid variables.$grayLight;
+// 		}
 
-		&:hover {
-			background-color: #f1f1f1;
-		}
-	}
+// 		&:hover {
+// 			background-color: #f1f1f1;
+// 		}
+// 	}
 
-	&__link {
-		color: variables.$primary;
-		font-size: 14px;
-		font-weight: 400;
-		display: block;
-		text-decoration: none;
+// 	&__link {
+// 		color: variables.$primary;
+// 		font-size: 14px;
+// 		font-weight: 400;
+// 		display: block;
+// 		text-decoration: none;
 
 
-	}
+// 	}
 
-}
+// }

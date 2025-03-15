@@ -504,6 +504,7 @@ main {
 	height: 60px;
 	line-height: 60px;
 	padding: 0 40px;
+	white-space: nowrap;
 
 	&_primary {
 		background-color: variables.$primary;

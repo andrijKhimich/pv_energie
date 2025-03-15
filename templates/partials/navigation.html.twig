@@ -28,9 +28,11 @@
 		{% else %}
 		{% for page in pages.children.visible %}
 		{% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
-		  <li class="nav-list__item">
-            <a href="{{ page.url|e }}" class="nav-list__link" aria-label="navigation link"> {{ page.menu|e }} </a>
-          </li>
+		<li>
+			<a href="{{ page.url|e }}" aria-label="navigation link">
+				{{ page.menu|e }}
+			</a>
+		</li>
 		{% endfor %}
 		{% endif %}
 		{% for mitem in site.menu %}
@@ -40,38 +42,6 @@
 				{{ mitem.text|e }}
 			</a>
 		</li>
-
 		{% endfor %}
-		<li>
-			<a href="https://webapp.optik-knopik.de" class="app-link"> Kundenlogin </a>
-		</li>
 	</ul>
 </nav>
-
-  {# <nav class="nav header__nav js-header-nav">
-        <ul class="nav-list">
-          <li class="nav-list__item">
-            <a href="#" class="nav-list__link"> Über uns </a>
-          </li>
-          <li class="nav-list__item">
-            <a href="#" class="nav-list__link"> Leistungen </a>
-            <ul class="subnav">
-              <li class="subnav__item">
-                <a href="#" class="subnav__link">Übersicht</a>
-              </li>
-              <li class="subnav__item">
-                <a href="#" class="subnav__link">Schlüsselfertige PV-Anlagen</a>
-              </li>
-              <li class="subnav__item">
-                <a href="#" class="subnav__link">Leasing und Energie-Contracting</a>
-              </li>
-              <li class="subnav__item">
-                <a href="#" class="subnav__link">Projektentwicklung</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-list__item">
-            <a href="about.html" class="nav-list__link"> Referenzen </a>
-          </li>
-        </ul>
-      </nav> #}

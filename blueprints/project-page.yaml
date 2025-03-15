@@ -27,6 +27,19 @@ form:
             .text:
               type: Editor
               label: Content
+        header.banner:
+          type: tab
+          title: Banner
+          fields:
+            .banner_bg:
+              type: filepicker
+              label: Select banner image
+              preview_image: true
+              accept:
+                - .png
+                - .jpg
+                - .webp
+                - .svg
         header.doubleContent:
           type: tab
           title: Image - content

@@ -90,17 +90,6 @@ form:
             .cards_title:
               type: text
               label: Title
-            .project__item:
-              type: list
-              label: Add item
-              max: 10
-              fields:
-                .project_content:
-                  type: Editor
-                  label: Text
-                .cards_button_link:
-                  type: Text
-                  label: Button Link
-                .cards_button_text:
-                  type: Text
-                  label: Button Text
+            .cards_button:
+              type: text
+              label: Button text

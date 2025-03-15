@@ -33,6 +33,10 @@
   }
 }
 
+.banner {
+  min-height: 50vw;
+}
+
 .half {
   background-color: variables.$primary;
   padding: 60px 0;
@@ -50,6 +54,7 @@
 
     img {
       object-fit: cover;
+      height: 100%;
     }
   }
 

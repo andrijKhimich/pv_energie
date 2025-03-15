@@ -21,7 +21,7 @@
 
 	{% block javascripts %}
 	{# {% do assets.addJs('theme://assets/js/libs.min.js',  { group: 'bottom' }) %} #}
-	{% do assets.addJs('theme://assets/js/script.js',  { group: 'bottom' }) %}
+	{% do assets.addJs('theme://assets/js/script.min.js',  { group: 'bottom' }) %}
 	{% endblock %}
 
 	{% block assets deferred %}
@@ -46,7 +46,7 @@
 			<div class="container">
 				<div class="header-row">
 					<a href="{{ home_url|e }}" class="logo">
-						<img src="images/logo.svg" alt="logo" />
+						<img src="{{ theme_url }}/assets/images/logo.svg" alt="logo" />
 					</a>
 						{% include 'partials/navigation.html.twig' %}
 				
@@ -120,12 +120,12 @@
 							<ul class="footer-social">
 								<li>
 									<a href="#">
-										<img src="./images/youtube.svg" alt="youtube" />
+										<img src="{{ theme_url }}/assets/images/youtube.svg" alt="youtube" />
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="./images/facebook.svg" alt="facebook" />
+										<img src="{{ theme_url }}/assets/images/facebook.svg" alt="facebook" />
 									</a>
 								</li>
 							</ul>
