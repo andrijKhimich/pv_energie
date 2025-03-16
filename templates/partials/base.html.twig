@@ -11,7 +11,7 @@
 	{% include 'partials/metadata.html.twig' %}
 	{# TODO: favicon #}
 	<!-- favicons -->
-	<link rel="icon" href="{{ url('theme://assets/images/logo.svg')|e }}" sizes="any"><!-- 32×32 -->
+	<link rel="icon" href="{{ url('theme://assets/images/favicon.png')|e }}" sizes="any"><!-- 32×32 -->
 	<link rel="canonical" href="{{ page.canonical(true)|e }}" />
 	{% endblock head %}
 
@@ -20,7 +20,6 @@
 	{% endblock %}
 
 	{% block javascripts %}
-	{# {% do assets.addJs('theme://assets/js/libs.min.js',  { group: 'bottom' }) %} #}
 	{% do assets.addJs('theme://assets/js/script.min.js',  { group: 'bottom' }) %}
 	{% endblock %}
 
@@ -48,8 +47,7 @@
 					<a href="{{ home_url|e }}" class="logo">
 						<img src="{{ theme_url }}/assets/images/logo.svg" alt="logo" />
 					</a>
-						{% include 'partials/navigation.html.twig' %}
-				
+					{% include 'partials/navigation.html.twig' %}
 					<button class="burger js-burger" aria-label="burger" title="burger">
 						<span class="burger_item"></span>
 						<span class="burger_item"></span>
@@ -74,7 +72,7 @@
 				<div class="footer__row">
 					<div class="footer__col">
 						<div class="footer__box">
-							<h4>Wie Sie uns erreichen</h4>
+							<h4>How to reach us</h4>
 							<ul class="footer-list">
 								<li>
 									<p>PV² Energie GmbH</p>
@@ -92,29 +90,29 @@
 					</div>
 					<div class="footer__col">
 						<div class="footer__box">
-							<h4>Solarenergie Überblick</h4>
+							<h4>Solar energy overview</h4>
 							<ul class="footer-list">
 								<li>
-									<a href="#">Funktionsweise Solaranlage</a>
+									<a href="#">How the solar system works</a>
 								</li>
 								<li>
-									<a href="#">Strom aus Solaranlagen verkaufen</a>
+									<a href="#">Selling electricity from solar systems</a>
 								</li>
 								<li>
-									<a href="#">Voraussetzungen an die Dachbeschaffenheit</a>
+									<a href="#">Requirements for the quality of the roof</a>
 								</li>
 								<li>
-									<a href="#">PV-Anlage finanzieren</a>
+									<a href="#">Financing a PV system</a>
 								</li>
 							</ul>
 						</div>
 					</div>
 					<div class="footer__col">
 						<div class="footer__box">
-							<h4>Mehr über PV2</h4>
+							<h4>More about PV2</h4>
 							<ul class="footer-list">
 								<li>
-									<p>Karriere</p>
+									<a href="#">Career</a>
 								</li>
 							</ul>
 							<ul class="footer-social">
@@ -133,14 +131,8 @@
 					</div>
 					<div class="footer__col">
 						<div class="footer__box">
-							<h4>English</h4>
-							<ul class="footer-list">
-								<li>
-									<p>Impressum</p>
-									<p>Disclaimer</p>
-									<p>AGB's</p>
-								</li>
-							</ul>
+							<h4>Language</h4>
+							{% include 'partials/langswitcher.html.twig' %}
 						</div>
 					</div>
 				</div>
