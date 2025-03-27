@@ -63,7 +63,7 @@
 			.nav-list {
 				flex-direction: column;
 				align-items: flex-start;
-				padding: 140px 0 0 22px;
+				padding: 20px 0 0 22px;
 				justify-content: flex-start;
 				font-size: 20px;
 			}
@@ -80,7 +80,6 @@
 
 .nav {
 	font-size: 20px;
-	margin-top: 20px;
 
 	&-list {
 		display: -webkit-box;
@@ -240,6 +239,10 @@
 	}
 
 	&.active {
+		position: absolute;
+		top: 40px;
+		right: 40px;
+
 		.burger_item {
 			&:first-child {
 				transform: rotate(45deg);

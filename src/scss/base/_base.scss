@@ -26,7 +26,7 @@ body {
 	width: 100%;
 	min-width: 320px;
 	margin: 0; // Remove the margin in all browsers.
-	font-family: "SourceSansPro", sans-serif;
+	font-family: "Source Sans Variable", sans-serif;
 	color: variables.$primary;
 	font-size: 20px;
 	line-height: 1.5em;
@@ -79,7 +79,6 @@ h4,
 h5,
 h6 {
 	margin: 0;
-	font-family: "Source Sans 3", sans-serif;
 	line-height: 1.5em;
 	font-weight: bold;
 }
