@@ -7,7 +7,7 @@ const path = {
     scss: `${deployFolder}/css/`,
     js: `${deployFolder}/js/`,
     images: `${deployFolder}/images/`,
-    fonts: `${deployFolder}/fonts/`,
+    // fonts: `${deployFolder}/fonts/`,
     files: `${deployFolder}/files/`,
   },
   src: {
@@ -15,7 +15,7 @@ const path = {
     scss: `${devFolder}/scss/style.scss`,
     js: `${devFolder}/js/script.js`,
     images: `${devFolder}/images/**/*.*`,
-    fonts: `${devFolder}/fonts/**/*.*`,
+    // fonts: `${devFolder}/fonts/**/*.*`,
     files: `${devFolder}/files/**/*.*`,
   },
   watch: {
@@ -23,7 +23,7 @@ const path = {
     scss: `${devFolder}/scss/**/*.scss`,
     js: `${devFolder}/js/**/*.js`,
     images: `${devFolder}/images/**/*.*`,
-    fonts: `${devFolder}/fonts/**/*.*`,
+    // fonts: `${devFolder}/fonts/**/*.*`,
     files: `${devFolder}/files/**/*.*`,
   },
   clean: `./${deployFolder}/`,
@@ -125,9 +125,9 @@ const images = () => {
   return gulp.src(path.src.images).pipe(gulp.dest(path.build.images)).pipe(browserSync.stream());
 };
 
-const fonts = () => {
-  return gulp.src(path.src.fonts).pipe(gulp.dest(path.build.fonts)).pipe(browserSync.stream());
-};
+// const fonts = () => {
+//   return gulp.src(path.src.fonts).pipe(gulp.dest(path.build.fonts)).pipe(browserSync.stream());
+// };
 const files = () => {
   return gulp.src(path.src.files).pipe(gulp.dest(path.build.files)).pipe(browserSync.stream());
 };
@@ -137,12 +137,12 @@ const watchFiles = () => {
   gulp.watch([path.watch.scss], scss);
   gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.images], images);
-  gulp.watch([path.watch.fonts], fonts);
+  // gulp.watch([path.watch.fonts], fonts);
   gulp.watch([path.watch.files], files);
   // TODO: check all files are watched
 };
 
-const mainTasks = gulp.parallel(html, scss, js, images, fonts);
+const mainTasks = gulp.parallel(html, scss, js, images);
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watchFiles, server));
 const build = gulp.series(reset, mainTasks);
