@@ -257,39 +257,3 @@
 		}
 	}
 }
-
-
-// .subnav {
-// 	display: none;
-// 	position: absolute;
-// 	top: 100%;
-// 	left: 0;
-// 	background-color: #fff;
-// 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-// 	list-style-type: none;
-// 	width: 200px;
-
-// 	&__item,
-// 	li {
-// 		padding: 8px 20px;
-
-// 		&:not(:last-child) {
-// 			border-bottom: 1px solid variables.$grayLight;
-// 		}
-
-// 		&:hover {
-// 			background-color: #f1f1f1;
-// 		}
-// 	}
-
-// 	&__link {
-// 		color: variables.$primary;
-// 		font-size: 14px;
-// 		font-weight: 400;
-// 		display: block;
-// 		text-decoration: none;
-
-
-// 	}
-
-// }
